@@ -9,6 +9,7 @@ const Header = () => {
         <div className={styles.navs}>
             <Link to={'/cart'}>gotoBasket</Link>
             <Link to={'/wishlist'}>gotoWishlist</Link>
+            <Link to={'/signup'}>FORM</Link>
             
         </div>
     </div>

@@ -5,18 +5,22 @@ import Card from "../../components/cards/Card";
 
 const Cart = () => {
   const [data, setData] = useState([]);
+  console.log(data);
+  
 
   useEffect(() => {
-    axios.get("https://northwind.vercel.app/api/categories").then((res) => {
-      const filteredData = res.data.filter(item => item.title != undefined)
-      setData(filteredData)
-    });
+    // axios.get("https://northwind.vercel.app/api/categories").then((res) => {
+    //   const filteredData = res.data.filter(item => item.title != undefined)
+    //   setData(filteredData)
+    // });
+
+    setData(JSON.parse(localStorage.getItem('cart')))
   }, []);
 
   return (
     <Layout>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {data.map((item) => (
+        {data && data.map((item) => (
           <Card
             item={item}
           />
